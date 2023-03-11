@@ -1,0 +1,13 @@
+1) Modify the variables and your schedule in the script.sh file, use this website if you don't know how cronjob schedules work https://crontab.guru/
+2) Drag and drop the script.sh file into your CloudShell, make sure you're using Bash
+3) Run the following command to encode the script in base64:
+  - cat script.sh | gzip -9 | base64 -w 0
+  - Copy the output and use it in the VM deployment
+4) Search "Deploy a custom template" in the Azure Portal search bar
+5) Click "Build your own template in the editor" -> "Load file" -> select the "template.json" file in the monet-automation-vm folder -> Save
+6) Select or create a Resource Group, configure your username (MUST BE THE SAME AS THE ONE DEFINED IN THE SCRIPT) and password for your VM and paste the base64 code generated previously, then you can proceed to create the VM
+7) Finally, you can go to "Auto-shutdown" and configure a specific time to turn off your VM to save resources, additionally you can go to "Tasks (preview)" and configure a start virtual machine task so it's automatically powered on 15 minutes before your shift starts.
+
+Enjoy!
+
+Ariel Gonzalez Sanchez
